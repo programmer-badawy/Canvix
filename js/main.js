@@ -1,12 +1,17 @@
 // start header bars
 let bars = document.querySelector("header .container i.fa-bars");
 let mobileNav = document.querySelector("header .container nav.mobile");
-
-function show() {
+let doc = document
+function show(e) {
   mobileNav.classList.toggle("show");
+  e.stopPropagation();
+}
+function hide() {
+  mobileNav.classList.remove("show");
 }
 
 bars.addEventListener("click", show);
+doc.addEventListener("click",hide)
 // end header bars
 
 
@@ -32,4 +37,5 @@ const swiper = new Swiper(".swiper", {
     // el: ".swiper-scrollbar",
   },
 });
+
 //end swiper
